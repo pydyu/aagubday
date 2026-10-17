@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aagnay's Birthday Party</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        html {
+            min-height: 100%;
+            background: #1d1e22;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+            background:
+                radial-gradient(circle at 18% 22%, rgba(130, 183, 235, 0.82) 0%, transparent 38%),
+                radial-gradient(circle at 82% 76%, rgba(49, 43, 226, 0.72) 0%, transparent 43%),
+                linear-gradient(135deg, #1d1e22 4%, #222d5b 48%, #312be2 100%);
+            background-size: 160% 160%, 170% 170%, 200% 200%;
+            animation: birthday-gradient 12s ease-in-out infinite alternate;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(115deg, rgba(220, 239, 255, 0.14), transparent 42%, rgba(29, 30, 34, 0.32));
+            animation: soft-fade 7s ease-in-out infinite alternate;
+        }
+
+        @keyframes birthday-gradient {
+            0% {
+                background-position: 0% 15%, 100% 85%, 0% 50%;
+            }
+            100% {
+                background-position: 36% 42%, 64% 58%, 100% 50%;
+            }
+        }
+
+        @keyframes soft-fade {
+            from { opacity: 0.28; }
+            to { opacity: 0.86; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            body,
+            body::before {
+                animation: none;
+            }
+        }
+
+        .invitation-banner {
+            position: relative;
+            width: min(92vw, 1100px);
+            margin: 0 auto;
+            padding-top: clamp(42px, 8vh, 90px);
+            color: #f7f0df;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: clamp(2.25rem, 5vw, 4.8rem);
+            font-weight: 700;
+            line-height: 0.95;
+            letter-spacing: 0.015em;
+            text-align: center;
+            text-wrap: balance;
+            text-shadow: 0 3px 18px rgba(10, 14, 34, 0.7);
+        }
+
+        #iframe-div {
+            width: min(720px, calc(100% - 32px));
+            margin: clamp(90px, 12vh, 140px) auto 80px;
+        }
+
+        iframe {
+            width: min(460px, calc(100vw - 32px));
+            max-width: 100%;
+        }
+
+        #playme-div {
+            color:antiquewhite;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .party-details {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            width: min(620px, 100%);
+            margin: 30px auto 0;
+            color: #f7f0df;
+            text-align: left;
+        }
+
+        .party-details details {
+            border: 1px solid rgba(220, 239, 255, 0.24);
+            border-radius: 14px;
+            background: rgba(24, 29, 55, 0.68);
+            box-shadow: 0 10px 30px rgba(10, 14, 34, 0.2);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+
+        .party-details details:last-child {
+            grid-column: 1 / -1;
+            justify-self: center;
+            width: calc((100% - 12px) / 2);
+        }
+
+        .party-details summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 16px 18px;
+            cursor: pointer;
+            list-style: none;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            user-select: none;
+        }
+
+        .party-details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .party-details summary::after {
+            content: "+";
+            color: #a9cce9;
+            font-family: Arial, sans-serif;
+            font-size: 1.35rem;
+            transition: transform 180ms ease;
+        }
+
+        .party-details details[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        .detail-copy {
+            margin: 0;
+            padding: 0 18px 18px;
+            color: #dcefff;
+            font-family: Arial, sans-serif;
+            font-size: 0.96rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 600px) {
+            .party-details {
+                grid-template-columns: 1fr;
+            }
+
+            .party-details details:last-child {
+                width: 100%;
+            }
+
+            #iframe-div {
+                margin-top: 72px;
+            }
+        }
+
+    #credits {
+        color: whitesmoke;
+    }
+    </style>
+</head>
+<body>
+
+    <h1 class="invitation-banner">You&rsquo;re Invited to Aagnay&rsquo;s Birthday Party!</h1>
+
+    <div id="iframe-div">
+    <center>
+        <p id="playme-div">PLAY ME!!!</p>
+    <iframe src="https://suno.com/embed/d0b1f3e7-d47c-40cd-a5ea-29c620bba851?autoplay=true" width="460" height="150" frameborder="0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen loading="eager" referrerpolicy="no-referrer-when-downgrade"><a href="https://suno.com/song/d0b1f3e7-d47c-40cd-a5ea-29c620bba851">Listen on Suno</a></iframe>
+    </center>
+
+    <section class="party-details" aria-label="Birthday party details">
+        <details>
+            <summary><span>📍 Location</span></summary>
+            <p class="detail-copy">Our home</p>
+        </details>
+
+        <details>
+            <summary><span>🕒 Time</span></summary>
+            <p class="detail-copy">10/25/2026, 11:00 PM - 2:00 PM </p>
+        </details>
+
+        <details>
+            <summary><span>🎉 Activities</span></summary>
+            <p class="detail-copy">First 30 minutes, icebreaker, then, 3 science expirements, fun coding activity, and time for the kids to play!</p>
+        </details>
+
+
+    </section>
+    </div>
+
+<center><h5 id="credits">Made by pydyu a.k.a Ekadyu</h5> </center>
+</body>
+</html>
